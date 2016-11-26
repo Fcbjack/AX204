@@ -68,12 +68,12 @@ player.body.velocity.x = 0;
 //keyboard events
 if (cursors.left.isDown){
 	player.body.velocity.x = -150;
-	player.animation.play('left');
+	player.animations	.play('left');
 } else if (cursors.right.isDown) {
 	player.body.velocity.x = 150;
-	player.animation.play('right');
+	player.animations.play('right');
 } else {
-	player.animation.stop();
+	player.animations.stop();
 	olayer.frame = 4;
 }
 //Allow player to jump
@@ -82,10 +82,10 @@ if (cursors.up.isDown  && player.body.touching.down) {
 }
 //enemy AI
 if (enemy.x > 749) {
-	enemy.animation.play('left');
+	enemy.animations.play('left');
 	enemy.body.velocity.x = -120;
 } else if (enemy.x < 405) {
-	enemy.animation.play('right');
+	enemy.animations.play('right');
 	enemy.body.velocity.x = 120;
 }
 }
