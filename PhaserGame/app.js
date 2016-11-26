@@ -64,11 +64,28 @@ function update(){
 game.physics.arcade.collide(player, platforms);
 game.physics.arcade.collide(enemy, platforms);
 //Player speed reset to 0
-plater.body.velocity.x = 0;
+player.body.velocity.x = 0;
 //keyboard events
 if (cursors.left.isDown){
 	player.body.velocity.x = -150;
 	player.animation.play('left');
+} else if (cursors.right.isDown) {
+	player.body.velocity.x = 150;
+	player.animation.play('right');
+} else {
+	player.animation.stop();
+	olayer.frame = 4;
 }
-
+//Allow player to jump
+if (cursors.up.isDown  && player.body.touching.down) {
+	player.body.velocity.y = -300;
+}
+//enemy AI
+if (enemy.x > 749) {
+	enemy.animation.play('left');
+	enemy.body.velocity.x = -120;
+} else if (enemy.x < 405) {
+	enemy.animation.play('right');
+	enemy.body.velocity.x = 120;
+}
 }
