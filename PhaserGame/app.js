@@ -68,7 +68,7 @@ function create(){
 		enemy2.body.collideWorldBounds = true;
 
 		//Enemy sprite
-	enemy3 = game.add.sprite(200, 20, 'baddie');
+	enemy3 = game.add.sprite(750, 20, 'baddie');
 		//animate
 		enemy3.animations.add('left', [0,1], 10, true);
 		enemy3.animations.add('right', [2,3], 10, true);
