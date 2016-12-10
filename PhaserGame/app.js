@@ -155,7 +155,7 @@ function collectStar (player, star){
 star.kill();
 score = score++;
 // create a star to replace killed star
-star = star.create(Math.floor(Math.random() * 750),0, 'star');
+star = stars.create(Math.floor(Math.random() * 750),0, 'star');
 star.body.gravity.y = 200;
 star.body.bounce.y = Math.random() * 0.9;
 }
