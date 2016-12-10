@@ -172,3 +172,4 @@ function loseLife (player,enemy) {
 enemy.kill();
 score = score - 5;
 enemy.reset(10, 20);
+}
